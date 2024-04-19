@@ -32,6 +32,11 @@ export default function ContactsPage() {
 
   const handleClose = () => {
     setOpen(false);
+    setSelectedContact(null);
+    setValue("firstName", "");
+    setValue("lastName", "");
+    setValue("age", "");
+    setValue("photo", "");
   };
   const handleSnackbarCloseCreate = () => {
     setShowSnackbarCreate(false);
@@ -69,8 +74,6 @@ export default function ContactsPage() {
       setValue("photo", selectedContact.photo);
     }
   }, [dialogMode, selectedContact, setValue]);
-
-  console.log(restUpdate);
 
   return (
     <div className="App bg-gray-100 min-h-screen flex  justify-center py-12 px-4 sm:px-6 lg:px-8">
